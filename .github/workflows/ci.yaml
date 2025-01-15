@@ -1,0 +1,20 @@
+name: ci-wf
+on:
+  pull_request:
+    branches:
+      - develop
+  push:
+    branches:
+      - develop
+jobs:
+  linting-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1 of Linting-job
+        run: echo "Allah Always Help me"
+  build-job:
+    needs: "linting-job"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1 of Build job
+        run: echo "Step 1 of Build Job"
